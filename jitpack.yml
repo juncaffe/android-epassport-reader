@@ -1,0 +1,10 @@
+jdk:
+  - openjdk17
+
+jitpack:
+  version: 2.0
+  builds:
+    - path: ePassport
+
+install:
+  - ./gradlew :ePassport:publishReleasePublicationToMavenLocal
