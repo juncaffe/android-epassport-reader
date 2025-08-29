@@ -76,10 +76,8 @@ kotlin {
 //}
 
 dependencies {
-//    implementation(fileTree("libs") { include("*.jar") })
-//    implementation(fileTree("libs") { include("*.aar") })
-    implementation(project(":ePassport"))
-//    implementation("com.github.juncaffe:android-epassport-reader:v0.0.8")
+//    implementation(project(":ePassport"))
+    implementation("com.github.juncaffe:android-epassport-reader:v0.0.10")
     implementation(libs.bundles.androidx)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose)

@@ -7,4 +7,4 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.jvm) apply false
 }
 
-extra["epassport_version"] = "0.0.8"
+extra["epassport_version"] = "0.0.10"

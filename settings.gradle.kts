@@ -15,6 +15,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "jmrtd-android"
-//include(":app")
+include(":app")
 include(":ePassport")
 include(":jmrtdlite")

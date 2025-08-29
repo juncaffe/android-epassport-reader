@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.juncaffe:android-epassport-reader:v0.0.8")
+    implementation("com.github.juncaffe:android-epassport-reader:v0.0.10")
 }
 ```
 
@@ -27,6 +27,15 @@ dependencies {
 - 안드로이드 환경에 맞게 경량화
 - SCUBA smartcard 의존성 제거
 - 일부 Kotlin 변환 및 메모리 보안 고려 수정
+- TD3 여권에서 다음 기능만 지원
+   - DG1, DG2, DG14 
+   - BAC (Basic Access Control)
+   - PACE (Password Authenticated Connection Establishment)
+   - CA (Chip Authentication, EAC-CA)
+   - PA (Passive Authentication)
+- 지원하지 않는 기능
+   - TA (Terminal Authentication, EAC-TA)
+   - DG3, DG4(한국 여권에는 없음) 생체정보 데이터 접근
 
 ### SCUBA (Smartcard)
 - 원저장소: https://sourceforge.net/projects/scuba/
