@@ -6,7 +6,7 @@ on:
       - "v*"
 
 permissions:
-  contents: read
+  contents: write
   packages: write
 
 jobs:
@@ -29,4 +29,18 @@ jobs:
         run: ./gradlew :ePassport:publish
         env:
           GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+     - name: Build AAR
+        # 패키지 업로드 대신 실제 AAR 파일을 생성하는 명령어를 실행합니다.
+        run: ./gradlew :ePassport:assembleRelease
+
+      - name: Create Release and Upload AAR
+        # 빌드된 AAR 파일을 GitHub Release 페이지에 자동으로 업로드합니다.
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            ePassport/build/outputs/aar/*.aar
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
