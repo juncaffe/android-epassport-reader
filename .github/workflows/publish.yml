@@ -31,7 +31,7 @@ jobs:
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-     - name: Build AAR
+      - name: Build AAR
         # 패키지 업로드 대신 실제 AAR 파일을 생성하는 명령어를 실행합니다.
         run: ./gradlew :ePassport:assembleRelease
 
